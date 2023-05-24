@@ -4,7 +4,7 @@
 #include "include/games.h"
 
 
-void main() {
-	printf("%c WON!", g_2DGame());
+int main(void) {
+
 }
 
