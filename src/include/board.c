@@ -91,11 +91,33 @@ void b_print(Board board) {
 			for (uint32 j = 0; j < BOARD_SIZE; ++j) {
 				printf("%c  ", board.arr[i][j]);
 			}
-			puts("");
-			puts("");
+			printf("\n\n");
 		}
 	}
 }
+
+void b_print3(Board boards[]) {
+	if (sizeof boards != sizeof(char) * 3 * 4) {
+		return;
+	}
+	//1st board
+	printf("               /       /        /     \n");
+	printf("       %c     /  %c   /   %c   /  %c  \n", boards[0].arr[0][0], boards[0].arr[0][1], boards[0].arr[0][2], boards[0].arr[0][3]);
+	printf("             /       /        /       \n");
+	printf("--------------------------------------\n");
+	printf("            /       /       /         \n");
+	printf("      %c   /  %c   /   %c  /    %c    \n", boards[1].arr[1][0], boards[1].arr[1][1], boards[1].arr[1][2], boards[0].arr[1][3]);
+	printf("          /       /       /           \n");
+	printf("--------------------------------------\n");
+	printf("        /       /       /             \n");
+	printf("    %c /   %c  /   %c  /    %c        \n", boards[2].arr[2][0], boards[2].arr[2][1], boards[2].arr[2][2], boards[0].arr[2][3]);
+	printf("      /       /       /               \n");
+}
+
+/*
+, boards[0].arr[0][0], boards[0].arr[0][1], boards[0].arr[0][2], boards[0].arr[0][3]);
+*/
+
 
 int b_check_full(Board board) {
 	for (uint32 i = 0; i < BOARD_SIZE; ++i) {

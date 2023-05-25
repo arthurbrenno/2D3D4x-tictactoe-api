@@ -1,8 +1,12 @@
-﻿  main.c
+﻿  board.c
+  main.c
+  Generating Code...
   games.c
 C:\Users\User\source\repos\tictactoe\src\include\games.c(5,2): warning C4013: 'memset' undefined; assuming extern returning int
 C:\Users\User\source\repos\tictactoe\src\include\games.c(9,3): warning C4013: 'system' undefined; assuming extern returning int
 C:\Users\User\source\repos\tictactoe\src\include\games.c(11,16): warning C4013: '_getch' undefined; assuming extern returning int
 C:\Users\User\source\repos\tictactoe\src\include\games.c(43,9): warning C4244: 'return': conversion from 'int' to 'char', possible loss of data
 C:\Users\User\source\repos\tictactoe\src\include\games.c(11,16): warning C4244: 'initializing': conversion from 'int' to 'char', possible loss of data
+C:\Users\User\source\repos\tictactoe\src\include\games.c(47,8): warning C4101: 'boards': unreferenced local variable
+C:\Users\User\source\repos\tictactoe\src\include\games.c(49): warning C4716: 'g_3D4xGame': must return a value
   tictactoe.vcxproj -> C:\Users\User\source\repos\tictactoe\x64\Debug\tictactoe.exe

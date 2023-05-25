@@ -4,13 +4,16 @@
 #include <stdio.h>
 #include "ttt_types.h"
 
+
+//CHANGE FOR DIFFERENT TICTACTOE GAME
 #define BOARD_SIZE 3
+#define NUMBER_OF_BOARDS 3
 
 /** @struct Board
  *  @brief This struct represents a BOARD_SIZE 2D board.
  */
 typedef struct {
-	ubyte arr[BOARD_SIZE][BOARD_SIZE];
+	ubyte arr[BOARD_SIZE][BOARD_SIZE]; 
 }Board;
 
 
@@ -30,14 +33,11 @@ int b_check_win(Board board);
 void b_print(Board board);
 
 /**
- * Prints FOUR boards into the console.
- * @param 1. A board structure (pass-by-value).
- * @param 2. A board structure (pass-by-value).
- * @param 3. A board structure (pass-by-value).
- * @param 4. A board structure (pass-by-value).
+ * Prints THREE boards into the console.
+ * @param 1. A struct of THREE boards (if not 3, return).
  * @return [void].
  */
-void b_4print(Board b1, Board b2, Board b3, Board b4);
+void b_print3(Board boards[]);
 
 /**
  * Check if the board is full.

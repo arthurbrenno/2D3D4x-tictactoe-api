@@ -5,6 +5,6 @@
 
 
 int main(void) {
-
+	printf("%c WON!", g_2DGame());
 }
 

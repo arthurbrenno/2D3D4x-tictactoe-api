@@ -11,6 +11,9 @@
 #define clear() system("cls")
 #endif
 
+
+
+
 /**
  * Plays a normal Tic-Tac-Toe game.
  * @param 1. void.
@@ -19,7 +22,7 @@
 char g_2DGame(void);
 
 /**
- * Plays a 3D 4x4x4x4 Qubic Tic-Tac-Toe game.
+ * Plays a 3D 4x4x4 Qubic Tic-Tac-Toe game.
  * @param 1. void.
  * @return character of the player who won (x|o).
  */
