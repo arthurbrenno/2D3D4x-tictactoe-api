@@ -70,7 +70,7 @@ char b_check_win(Board board) {
 	return 0;
 }
 
-char b_4d_crossboard_check_win(Board boards[NUMBER_OF_BOARDS]) {
+char b_3d_crossboard_check_win(Board boards[NUMBER_OF_BOARDS]) {
 	
 	//check by row
 	for (uint32 row = 0; row < BOARD_SIZE; ++row) {
@@ -158,6 +158,18 @@ void b_print(Board board) {
 			printf("\n\n");
 		}
 	}*/
+}
+
+void b_3dprint(Board boards[NUMBER_OF_BOARDS]) {
+	for (int k = 0; k < NUMBER_OF_BOARDS; ++k) {
+		for (int i = 0; i < BOARD_SIZE; ++i) {
+			for (int j = 0; j < BOARD_SIZE; ++j) {
+				printf("%d ", boards[k].arr[i][j]);
+			}
+			printf("\n");
+		}
+		printf("\n");
+	}
 }
 
 int b_check_full(Board board) {

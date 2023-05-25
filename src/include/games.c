@@ -44,6 +44,33 @@ char g_2DGame(void) {
 }
 
 char g_3D4xGame(void) {
-	Board boards[4];
-	//TODO
+	Board boards[NUMBER_OF_BOARDS];
+	for (uint32 init = 0; init < NUMBER_OF_BOARDS; ++init) {
+		memset(boards[init].arr, FILL, sizeof(boards[init].arr));
+	}
+
+	do {
+		b_3dprint(boards);
+		char board_chosen = _getch();
+		switch (board_chosen) {
+		case 1:
+			//your implementation here
+		case 2:
+			//your implementation here
+		case 3:
+			//your implementation here
+		case 4:
+			//your implementation here
+		default:
+			break;
+		}
+	} while (!b_3d_crossboard_check_win(boards) &&
+		!b_check_full(boards[0]) &&
+		!b_check_full(boards[1]) &&
+		!b_check_full(boards[2]) &&
+		!b_check_full(boards[3]) &&
+		!b_check_win(boards[0]) &&
+		!b_check_win(boards[1]) &&
+		!b_check_win(boards[2]) &&
+		!b_check_win(boards[3]));
 }

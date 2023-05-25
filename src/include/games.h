@@ -12,9 +12,6 @@
 #define clear() system("cls")
 #endif
 
-
-
-
 /**
  * Plays a normal Tic-Tac-Toe game.
  * @param 1. void.

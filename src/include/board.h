@@ -25,11 +25,11 @@ typedef struct {
 char b_check_win(Board board);
 
 /**
- * Checks if somenone won.
+ * Checks if somenone won across the boards.
  * @param 1. An array of board structs (pass-by-value).
  * @return [1] if someone won, [0] if nobody won yet.
  */
-char b_4d_crossboard_check_win(Board boards[NUMBER_OF_BOARDS]);
+char b_3d_crossboard_check_win(Board boards[NUMBER_OF_BOARDS]);
 
 /**
  * Prints ONE board into the console.
@@ -37,6 +37,7 @@ char b_4d_crossboard_check_win(Board boards[NUMBER_OF_BOARDS]);
  * @return [void].
  */
 void b_print(Board board);
+
 
 /**
  * Check if the board is full.
