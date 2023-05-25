@@ -1,6 +1,7 @@
 #ifndef GAMES_H
 #define GAMES_H
 
+#include <conio.h>
 #include "board.h"
 #include "ttt_types.h"
 

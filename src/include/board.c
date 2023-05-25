@@ -1,6 +1,6 @@
 #include "board.h"
 
-int b_check_win(Board board) {
+char b_check_win(Board board) {
 	//TODO
 	
 	// =-=-= Check row wins =-=-=
@@ -70,6 +70,56 @@ int b_check_win(Board board) {
 	return 0;
 }
 
+char b_4d_crossboard_check_win(Board boards[NUMBER_OF_BOARDS]) {
+	
+	//check by row
+	for (uint32 row = 0; row < BOARD_SIZE; ++row) {
+		char first_letter = boards[0].arr[row][0];
+		uint32 letter_counter = 1;
+		for (uint32 col = 1; col < BOARD_SIZE; ++col) {
+			if (boards[col].arr[row][col] == first_letter && boards[col].arr[row][col] != FILL) {
+				++letter_counter;
+			} else { break; } //next row, skip unness iterations
+		}
+		if (letter_counter == BOARD_SIZE) {
+			return first_letter;
+		}
+	}
+
+	//check by column
+	uint32 col = 0;
+	while (col < BOARD_SIZE) {
+		char first_letter = boards[0].arr[0][col];
+		uint32 letter_counter = 1;
+		for (uint32 i = 1; i < BOARD_SIZE; ++i) {
+			if (boards[i].arr[i][col] == first_letter && boards[i].arr[i][col] != FILL) {
+				++letter_counter;
+			} else { break; } // next col, skip unnessessary iterations.
+		}
+		if (letter_counter == BOARD_SIZE) {
+			return first_letter;
+		}
+		++col;
+	}
+
+	//check by main diagonal
+	uint32 mdiag_letter_counter = 1;
+	for (uint32 i = 1; i < BOARD_SIZE; ++i) {
+		char first_letter = boards[0].arr[0][0];
+		if (boards[i].arr[i][i] == first_letter && boards[i].arr[i][i] != FILL) {
+			++mdiag_letter_counter;
+		} else { break; }
+		
+		if (mdiag_letter_counter == BOARD_SIZE) {
+			return first_letter;
+		}
+	}
+
+	//check by sec diagonal
+
+	return 0;
+}
+
 void b_print(Board board) {
 	if (BOARD_SIZE == 3) {
 		
@@ -86,38 +136,15 @@ void b_print(Board board) {
 		printf("      |     |     \n");
 
 	}
-	else {
+	/*else {
 		for (uint32 i = 0; i < BOARD_SIZE; ++i) {
 			for (uint32 j = 0; j < BOARD_SIZE; ++j) {
 				printf("%c  ", board.arr[i][j]);
 			}
 			printf("\n\n");
 		}
-	}
+	}*/
 }
-
-void b_print3(Board boards[]) {
-	if (sizeof boards != sizeof(char) * 3 * 4) {
-		return;
-	}
-	//1st board
-	printf("               /       /        /     \n");
-	printf("       %c     /  %c   /   %c   /  %c  \n", boards[0].arr[0][0], boards[0].arr[0][1], boards[0].arr[0][2], boards[0].arr[0][3]);
-	printf("             /       /        /       \n");
-	printf("--------------------------------------\n");
-	printf("            /       /       /         \n");
-	printf("      %c   /  %c   /   %c  /    %c    \n", boards[1].arr[1][0], boards[1].arr[1][1], boards[1].arr[1][2], boards[0].arr[1][3]);
-	printf("          /       /       /           \n");
-	printf("--------------------------------------\n");
-	printf("        /       /       /             \n");
-	printf("    %c /   %c  /   %c  /    %c        \n", boards[2].arr[2][0], boards[2].arr[2][1], boards[2].arr[2][2], boards[0].arr[2][3]);
-	printf("      /       /       /               \n");
-}
-
-/*
-, boards[0].arr[0][0], boards[0].arr[0][1], boards[0].arr[0][2], boards[0].arr[0][3]);
-*/
-
 
 int b_check_full(Board board) {
 	for (uint32 i = 0; i < BOARD_SIZE; ++i) {
