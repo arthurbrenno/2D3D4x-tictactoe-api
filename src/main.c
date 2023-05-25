@@ -9,10 +9,10 @@ int main(void) {
 	for (uint32 init = 0; init < NUMBER_OF_BOARDS; ++init) {
 		memset(boards[init].arr, FILL, sizeof(boards[init].arr));
 	}
-	boards[0].arr[0][0] = X;
-	boards[1].arr[1][1] = X;
-	boards[2].arr[2][2] = X;
-	boards[3].arr[3][3] = X;
+	boards[0].arr[3][0] = X;
+	boards[1].arr[2][1] = X;
+	boards[2].arr[1][2] = X;
+	boards[3].arr[0][3] = X;
 	printf("%c", b_4d_crossboard_check_win(boards));
 
 }

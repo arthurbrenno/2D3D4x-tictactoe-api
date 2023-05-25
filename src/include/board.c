@@ -116,6 +116,20 @@ char b_4d_crossboard_check_win(Board boards[NUMBER_OF_BOARDS]) {
 	}
 
 	//check by sec diagonal
+	{
+		uint32 sd_row = BOARD_SIZE - 1;
+		char sdfirst_letter = boards[0].arr[sd_row][0];
+		uint32 sdiag_letter_counter = 1;
+		for (uint32 i = 1; i < BOARD_SIZE; ++i) {
+			if (boards[i].arr[--sd_row][i] == sdfirst_letter && boards[i].arr[sd_row][i] != FILL) {
+				++sdiag_letter_counter;
+			}
+		}
+
+		if (sdiag_letter_counter == BOARD_SIZE) {
+			return sdfirst_letter;
+		}
+	}
 
 	return 0;
 }
