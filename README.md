@@ -3,7 +3,7 @@
 Example image. Not my app.
 
 
-# [❌] 2D & 3D4x TicTacToe
+# [❌] 2D & 3D4x TicTacToe API
 
 This API provides backend support for making both 2D and 3D TicTacToe games. A 2D game is already done and can be played with g_2DGame() function. But a 3D 4x4x4x4 version is uppon dev and how he's going to implement it.
 
